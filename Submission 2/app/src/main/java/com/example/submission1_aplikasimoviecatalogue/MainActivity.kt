@@ -1,19 +1,14 @@
 package com.example.submission1_aplikasimoviecatalogue
 
 import android.content.Intent
-import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
-import com.example.submission1_aplikasimoviecatalogue.adapter.MovieAdapter
-import com.example.submission1_aplikasimoviecatalogue.adapter.MyVPagerAdapter
 import com.example.submission1_aplikasimoviecatalogue.fragment.MovieFragment
 import com.example.submission1_aplikasimoviecatalogue.fragment.TvFragment
-import com.example.submission1_aplikasimoviecatalogue.model.Movie
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
