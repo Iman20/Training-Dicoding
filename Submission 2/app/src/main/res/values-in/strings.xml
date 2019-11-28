@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Katalog Film</string>
     <string name="overview">Ikhtisar</string>
-    <string name="crew">Featured Crew</string>
-    <string name="director">Director</string>
-    <string name="writer">Writer</string>
-    <string name="screen_play">Screenplay</string>
+    <string name="crew">Kru Unggulan</string>
+    <string name="director">Pemimpin</string>
+    <string name="writer">Penulis</string>
+    <string name="screen_play">Pemain layar</string>
 
     <string name="movie">Film</string>
     <string name="tvShow">Tv Serie</string>

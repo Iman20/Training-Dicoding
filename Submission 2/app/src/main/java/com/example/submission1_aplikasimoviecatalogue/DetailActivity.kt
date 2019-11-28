@@ -25,7 +25,7 @@ class DetailActivity : AppCompatActivity() {
         textDescription.text = data.description
         textDirector.text = data.director
         textWriter.text = data.writer
-        textScreenPlay.text = data.screenPlay
+        textScreen.text = data.screenPlay
         imageView.setImageResource(data.image)
         backButton.setOnClickListener {
             onBackPressed()
