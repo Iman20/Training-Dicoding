@@ -5,6 +5,10 @@
     <string name="director">Pemimpin</string>
     <string name="writer">Penulis</string>
     <string name="screen_play">Pemain layar</string>
+    <string name="popularity">Popularitas</string>
+    <string name="rate">Peringkat</string>
+    <string name="vote_count">Jumlah Pemilih</string>
+    <string name="vote_average">Rata - rata pemilih</string>
 
     <string name="movie">Film</string>
     <string name="tvShow">Tv Serie</string>

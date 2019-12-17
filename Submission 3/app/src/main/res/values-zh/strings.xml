@@ -5,6 +5,10 @@
     <string name="director">Director</string>
     <string name="writer">Writer</string>
     <string name="screen_play">Screenplay</string>
+    <string name="popularity">人气</string>
+    <string name="rate">评分</string>
+    <string name="vote_count">票数</string>
+    <string name="vote_average">平均投票</string>
 
     <string name="movie">电影</string>
     <string name="tvShow">电视节目</string>

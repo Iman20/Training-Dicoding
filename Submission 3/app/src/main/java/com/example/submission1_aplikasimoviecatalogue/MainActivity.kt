@@ -7,6 +7,7 @@ import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import com.androidnetworking.AndroidNetworking
 import com.example.submission1_aplikasimoviecatalogue.fragment.MovieFragment
 import com.example.submission1_aplikasimoviecatalogue.fragment.TvFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+        AndroidNetworking.initialize(applicationContext)
     }
 
     private fun initView() {

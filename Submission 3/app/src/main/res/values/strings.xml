@@ -5,6 +5,10 @@
     <string name="director">Director</string>
     <string name="writer">Writer</string>
     <string name="screen_play">Screenplay</string>
+    <string name="popularity">Popularity</string>
+    <string name="rate">Rating</string>
+    <string name="vote_count">Vote Count</string>
+    <string name="vote_average">Vote Average</string>
 
     <string name="movie">Movie</string>
     <string name="tvShow">Tv Show</string>

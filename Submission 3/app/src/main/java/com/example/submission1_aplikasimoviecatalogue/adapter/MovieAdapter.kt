@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.submission1_aplikasimoviecatalogue.R
 import com.example.submission1_aplikasimoviecatalogue.model.Movie
 
@@ -47,7 +48,8 @@ class MovieAdapter internal constructor(private val movies: ArrayList<Movie>): R
         internal fun bind(movie: Movie){
             textTitle.text = movie.title
             textSubTitle.text = movie.description
-            image.setImageResource(movie.image)
+//            image.setImageResource(movie.image)
+            Glide.with(itemView).load(movie.posterPath).into(image)
             container.setOnClickListener {
                 onItemClickListener.OnItemClicked(movie)
             }

@@ -3,6 +3,7 @@ package com.example.submission1_aplikasimoviecatalogue
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import com.bumptech.glide.Glide
 import com.example.submission1_aplikasimoviecatalogue.model.Movie
 import kotlinx.android.synthetic.main.detail_activity.*
 
@@ -23,10 +24,10 @@ class DetailActivity : AppCompatActivity() {
         val data = intent.getParcelableExtra(DATA) as Movie
         textTitle.text = data.title
         textDescription.text = data.description
-        textDirector.text = data.director
-        textWriter.text = data.writer
-        textScreen.text = data.screenPlay
-        imageView.setImageResource(data.image)
+        textDirector.text = data.voteAvarage
+        textWriter.text = data.voteCount
+        textScreen.text = data.popularity
+        Glide.with(this).load(data.posterPath).into(imageView)
         backButton.setOnClickListener {
             onBackPressed()
         }
