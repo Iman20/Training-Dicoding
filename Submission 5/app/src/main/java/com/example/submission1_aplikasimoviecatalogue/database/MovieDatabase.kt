@@ -4,6 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.androidnetworking.AndroidNetworking
+import com.androidnetworking.common.ANRequest
+import com.example.submission1_aplikasimoviecatalogue.BuildConfig
 import com.example.submission1_aplikasimoviecatalogue.dao.MovieDao
 import com.example.submission1_aplikasimoviecatalogue.model.Movie
 
@@ -12,18 +17,26 @@ import com.example.submission1_aplikasimoviecatalogue.model.Movie
     version = 1
 )
 abstract class MovieDatabase : RoomDatabase(){
-    abstract fun MovieDao() : MovieDao
+    abstract fun movieDao() : MovieDao
 
     companion object {
         @Volatile private var instance: MovieDatabase? = null
-        private  var LOCK = Any()
-
-        operator fun invoke(context: Context) = instance ?: synchronized(LOCK){
-            instance ?: buildDatabase(context).also { instance = it}
+        fun getInstance(context: Context): MovieDatabase{
+            if (instance == null){
+                synchronized(MovieDatabase::class.java){
+                    if (instance == null){
+                        instance = Room.databaseBuilder(context, MovieDatabase::class.java, "movie.db").build()
+                    }
+                }
+            }
+            return instance!!
         }
 
-        private fun buildDatabase(context: Context) = Room.databaseBuilder(context, MovieDatabase::class.java, "movie.db").build()
-
+        val MIGRATION_1_2 : Migration = object : Migration(1,2){
+            override fun migrate(database: SupportSQLiteDatabase) {
+                //To change body of created functions use File | Settings | File Templates.
+            }
+        }
     }
 
 

@@ -14,25 +14,25 @@ class DetailViewModel : ViewModel() {
     private var movie = MutableLiveData<Movie>()
 
     fun initialDetail(context: Context, title: String){
-        val db = MovieDatabase(context)
-        GlobalScope.launch {
-            val movies = db.MovieDao().getByTitle(title)
-            movie.postValue(movies)
-        }
+//        val db = MovieDatabase(context)
+//        GlobalScope.launch {
+//            val movies = db.MovieDao().getByTitle(title)
+//            movie.postValue(movies)
+//        }
     }
 
     fun addFavorite(context: Context, movie: Movie){
-        val db = MovieDatabase(context)
-        GlobalScope.launch {
-            db.MovieDao().insertAll(movie)
-        }
+//        val db = MovieDatabase(context)
+//        GlobalScope.launch {
+//            db.MovieDao().insertAll(movie)
+//        }
     }
 
     fun deleteFavorite(context: Context, movie: Movie){
-        val db = MovieDatabase(context)
-        GlobalScope.launch {
-            db.MovieDao().delete(movie)
-        }
+//        val db = MovieDatabase(context)
+//        GlobalScope.launch {
+//            db.MovieDao().delete(movie)
+//        }
     }
     internal fun getDetail(): LiveData<Movie>{
         return movie

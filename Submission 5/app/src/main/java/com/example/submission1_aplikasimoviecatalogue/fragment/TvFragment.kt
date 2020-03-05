@@ -7,19 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.submission1_aplikasimoviecatalogue.DetailActivity
 import com.example.submission1_aplikasimoviecatalogue.R
 import com.example.submission1_aplikasimoviecatalogue.adapter.MovieAdapter
 import com.example.submission1_aplikasimoviecatalogue.model.Movie
 import com.example.submission1_aplikasimoviecatalogue.viewmodel.TVViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 import kotlinx.android.synthetic.main.tv_layout.*
 
 class TvFragment : Fragment() {
     private lateinit var adapter: MovieAdapter
     private var tvs = arrayListOf<Movie>()
-    private lateinit var tvViewModel: TVViewModel
+//    private val tvViewModel: TVViewModel by viewModels()
+    private val tvViewModel : TVViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -54,8 +55,7 @@ class TvFragment : Fragment() {
     }
 
     private fun initData() {
-        tvViewModel  = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(TVViewModel::class.java)
-        tvViewModel.initialTv()
+//        tvViewModel.getTv()
     }
 
     private fun initRecycle() {

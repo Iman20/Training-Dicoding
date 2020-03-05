@@ -1,11 +1,13 @@
 package com.example.submission1_aplikasimoviecatalogue.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
+import androidx.room.OnConflictStrategy.REPLACE
 import com.example.submission1_aplikasimoviecatalogue.model.Movie
 
 @Dao
 interface MovieDao {
-    @Insert
+    @Insert(onConflict = REPLACE)
     fun insertAll(vararg  movie: Movie)
 
     @Query("SELECT * FROM movie")
@@ -19,4 +21,5 @@ interface MovieDao {
 
     @Delete
     fun delete(movie: Movie)
+
 }

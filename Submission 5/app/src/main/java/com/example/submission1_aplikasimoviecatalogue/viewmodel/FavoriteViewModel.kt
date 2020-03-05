@@ -15,12 +15,12 @@ class FavoriteViewModel : ViewModel() {
     var listFavorite  = MutableLiveData<List<Movie>>()
 
     fun initialFavorite(context: Context){
-        val db = MovieDatabase(context)
-        GlobalScope.launch {
-            val movies = db.MovieDao().getAll()
-            Log.d("MOVIE CATALOG ", movies.size.toString())
-            listFavorite.postValue(movies)
-        }
+//        val db = MovieDatabase(context)
+//        GlobalScope.launch {
+//            val movies = db.MovieDao().getAll()
+//            Log.d("MOVIE CATALOG ", movies.size.toString())
+//            listFavorite.postValue(movies)
+//        }
     }
 
     internal fun getFavorite(): LiveData<List<Movie>>{

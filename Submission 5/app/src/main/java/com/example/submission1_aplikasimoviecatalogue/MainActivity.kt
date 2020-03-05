@@ -1,25 +1,45 @@
 package com.example.submission1_aplikasimoviecatalogue
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.androidnetworking.AndroidNetworking
+import com.example.submission1_aplikasimoviecatalogue.di.allModule
 import com.example.submission1_aplikasimoviecatalogue.fragment.FavoriteFragment
 import com.example.submission1_aplikasimoviecatalogue.fragment.MovieFragment
 import com.example.submission1_aplikasimoviecatalogue.fragment.TvFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+        initFastAndroidNetworking(applicationContext)
         AndroidNetworking.initialize(applicationContext)
+        startKoin {
+            androidLogger()
+            androidContext(this@MainActivity)
+            modules(allModule)
+        }
+    }
+
+    private fun initFastAndroidNetworking(applicationContext: Context?) {
+        val okHttpClient = OkHttpClient().newBuilder()
+            .build()
+        AndroidNetworking.initialize(applicationContext, okHttpClient)
+
     }
 
     private fun initView() {
@@ -28,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         addFragment(movieFragment)
 
     }
+
 
     private val navigateListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
